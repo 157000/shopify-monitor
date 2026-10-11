@@ -106,6 +106,6 @@ temp/
 
 ### Tenuta Grieci Intelligence ###
 # Report generati (restano anche nella tabella `reports` del database)
-reports/
+/reports/
 # File di import con dati raccolti
-data/
+/data/
