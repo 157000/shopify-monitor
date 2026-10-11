@@ -1,0 +1,89 @@
+# Tassonomia di classificazione — Tenuta Grieci Marketing Intelligence
+#
+# È lo "schema mentale" con cui l'AI legge prodotti, pagine e contenuti dei marchi monitorati.
+# Cambiare la tassonomia significa cambiare il modo in cui si misura il mercato: quando la modifichi,
+# aggiorna `version`. Le classificazioni precedenti restano nel database con la loro versione.
+#
+# Ogni etichetta assegnata dall'AI deve essere accompagnata da una citazione letterale del testo
+# osservato: se la citazione non si trova nel testo, l'etichetta viene scartata automaticamente.
+
+version: "2026-10-a"
+
+dimensions:
+  tema:
+    description: Argomento principale della comunicazione.
+    values:
+      provenienza_territorio: Territorio, regione, paesaggio, origine geografica.
+      famiglia_storia: Storia della famiglia o dell'azienda, generazioni, tradizione.
+      processo_produttivo: Raccolta, frangitura, estrazione a freddo, conservazione, filiera.
+      cultivar_monovarietale: Cultivar specifiche, monovarietali, blend dichiarati.
+      qualita_certificazioni: DOP, IGP, biologico, premi, analisi chimiche, acidità.
+      profilo_sensoriale: Note di degustazione, fruttato, amaro, piccante, intensità.
+      abbinamenti_cucina: Ricette, abbinamenti, uso in cucina.
+      salute_benessere: Riferimenti a salute, polifenoli, nutrizione.
+      sostenibilita: Ambiente, agricoltura rigenerativa, packaging sostenibile.
+      design_packaging: Bottiglia, latta, etichetta, confezione come elemento di valore.
+      regalo_gifting: Il prodotto presentato come dono.
+      esclusivita_lusso: Edizioni limitate, numerate, rarità, linguaggio del lusso.
+      stagionalita_olio_nuovo: Olio nuovo, novello, prima spremitura dell'annata.
+      ristorazione_chef: Chef, ristoranti, uso professionale.
+      prezzo_promozione: Il prezzo o la promozione come messaggio principale.
+
+  occasione:
+    description: Occasione d'acquisto o di consumo esplicitamente citata.
+    values:
+      natale_festivita: Natale e festività di fine anno.
+      ricorrenze_personali: Compleanni, festa della mamma/del papà, San Valentino.
+      matrimonio_eventi: Matrimoni, bomboniere, eventi privati.
+      regalo_aziendale: Regali corporate, omaggi a clienti e dipendenti.
+      uso_quotidiano: Consumo di tutti i giorni.
+      degustazione_esperienza: Degustazioni, visite in frantoio, esperienze.
+      abbonamento_ricorrente: Abbonamenti e invii periodici.
+
+  formato:
+    description: Formato o confezione del prodotto.
+    values:
+      bottiglia_singola: Bottiglia singola.
+      latta: Latta o lattina.
+      formato_grande: Bag-in-box, taniche, formati da 3 litri in su.
+      confezione_regalo: Cofanetti, box regalo, set confezionati.
+      kit_degustazione: Set di più oli per assaggio comparativo.
+      formato_ristorazione: Formati e condizioni per il canale professionale.
+      miniatura: Formati piccoli (es. sotto i 100 ml).
+
+  leva_commerciale:
+    description: Meccanismo commerciale esplicito.
+    values:
+      sconto_percentuale: Sconto in percentuale o prezzo barrato.
+      spedizione_gratuita: Spedizione gratuita o soglia di spedizione.
+      bundle: Più prodotti venduti insieme a prezzo dedicato.
+      edizione_limitata: Disponibilità limitata dichiarata.
+      preordine: Prenotazione prima della disponibilità (es. olio nuovo).
+      personalizzazione: Incisioni, biglietti, etichette personalizzate.
+      programma_fedelta: Punti, vantaggi riservati, club.
+
+  cta:
+    description: Invito all'azione presente nel testo.
+    values:
+      acquista: Acquista, aggiungi al carrello, ordina.
+      scopri: Scopri, leggi, esplora.
+      abbonati: Abbonati, iscriviti a un piano.
+      prenota: Prenota una visita, una degustazione, un evento.
+      contatta_b2b: Contatti per aziende, ristoranti, rivenditori.
+      iscriviti_newsletter: Iscrizione alla newsletter.
+
+  pubblico:
+    description: Pubblico a cui il testo si rivolge esplicitamente.
+    values:
+      consumatore_appassionato: Appassionati di gastronomia, foodie.
+      chi_fa_un_regalo: Chi acquista per regalare.
+      azienda: Aziende e uffici acquisti.
+      ristorazione_ospitalita: Ristoranti, hotel, chef.
+      rivenditore: Negozi, distributori, importatori.
+
+# Affermazioni che richiedono una verifica normativa prima di essere usate da Tenuta Grieci.
+# Esempio: le indicazioni sulla salute degli alimenti nell'UE sono regolate dal Reg. (CE) 1924/2006 e
+# l'elenco delle indicazioni autorizzate dal Reg. (UE) 432/2012 (che include una indicazione specifica
+# sui polifenoli dell'olio d'oliva, con condizioni d'uso). Il sistema segnala, non giudica la conformità.
+sensitive_claims:
+  - salute_benessere

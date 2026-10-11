@@ -1,0 +1,72 @@
+# Universo competitivo — Tenuta Grieci Marketing Intelligence
+#
+# Copia questo file in config/brands.yaml, sostituisci gli esempi con marchi reali ed esegui:
+#     node src/cli.js brands:sync
+#
+# Il progetto (docs/PROGETTO.md §3.1) suggerisce di partire da circa 30 marchi in quattro gruppi:
+#   concorrente_diretto     ~15  produttori di olio EVO premium        → prodotti, prezzi, comunicazione
+#   gastronomico_premium     ~5  cioccolato, vino, conserve, specialità → presentazione e vendita
+#   lifestyle_lusso          ~5  marchi con identità forte              → posizionamento e storytelling
+#   operatore_commerciale    ~5  e-commerce, negozi, gifting           → canali e opportunità B2B
+# Un riferimento creativo non è un concorrente economico: il gruppo serve a non confonderli nei report.
+#
+# Regole di compilazione:
+#   - Nessun dato inventato: lascia vuoto (null) ciò che non hai verificato.
+#   - `positioning`: posizionamento DICHIARATO dal marchio (citazione dal sito), non una nostra opinione.
+#   - `terms_note`: esito della verifica delle condizioni d'uso del sito (data, cosa hai controllato).
+#     Il report elenca le fonti in cui manca.
+#   - `currency`: valuta dei prezzi verificata da te (ISO 4217). Se assente, il sistema prova a rilevarla.
+#   - Le fonti tolte da questo file vengono disattivate, non cancellate: lo storico resta.
+#   - Per scoprire la piattaforma di un sito: node src/cli.js sources:detect
+#
+# Tipi di fonte:
+#   shopify       catalogo pubblico /products.json (prezzi, varianti, disponibilità, descrizioni)
+#   woocommerce   catalogo pubblico tramite WooCommerce Store API
+#   web_page      una pagina specifica (homepage, pagina regali, pagina B2B): confronto del testo nel tempo
+#   manual_import contenuti/inserzioni importati con `import:content` (nessuna raccolta automatica)
+
+brands:
+  - slug: esempio-frantoio-diretto            # minuscole, numeri e trattini
+    name: "Esempio Frantoio (da sostituire)"
+    group: concorrente_diretto
+    country: IT
+    price_band: premium                        # tua classificazione, es. medio | premium | lusso
+    positioning: null                          # es. citazione dal sito: "…"
+    main_products: []
+    sales_channels: [ecommerce]
+    website: https://www.example.com
+    social:
+      instagram: https://www.instagram.com/example
+    notes: null
+    sources:
+      - kind: shopify
+        url: https://www.example.com
+        currency: EUR
+        terms_note: null                       # es. "2026-10-12: termini letti, nessun divieto di consultazione automatizzata"
+        min_interval_hours: 24
+      - kind: web_page
+        url: https://www.example.com/pages/regali
+        label: Pagina regali
+        min_interval_hours: 72
+
+  - slug: esempio-cioccolato-premium
+    name: "Esempio Cioccolato Premium (da sostituire)"
+    group: gastronomico_premium
+    country: IT
+    website: https://www.example.org
+    notes: Riferimento per confezioni regalo e calendario stagionale, non concorrente economico.
+    sources:
+      - kind: web_page
+        url: https://www.example.org/
+        label: Homepage
+
+  - slug: esempio-operatore-gifting
+    name: "Esempio Operatore Gifting (da sostituire)"
+    group: operatore_commerciale
+    country: IT
+    website: https://www.example.net
+    sales_channels: [ecommerce, b2b]
+    sources:
+      - kind: manual_import
+        url: https://www.example.net
+        label: Inserzioni da Meta Ad Library (import manuale)

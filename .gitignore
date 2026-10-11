@@ -104,4 +104,8 @@ dist/
 tmp/
 temp/
 
-package-lock.json
+### Tenuta Grieci Intelligence ###
+# Report generati (restano anche nella tabella `reports` del database)
+reports/
+# File di import con dati raccolti
+data/

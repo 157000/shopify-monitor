@@ -1,18 +1,32 @@
 {
-  "name": "shopify-monitor",
-  "version": "1.4.1",
-  "description": "Shopify monitor",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+  "name": "tenuta-grieci-intelligence",
+  "version": "0.1.0",
+  "description": "Tenuta Grieci — Marketing Intelligence: Modulo A (Competitive Intelligence). Monitoraggio dei marchi, archivio storico, classificazione AI con evidenze verificate e report settimanale.",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22"
   },
-  "author": "Dam998",
-  "license": "ISC",
+  "bin": {
+    "tgi": "src/cli.js"
+  },
+  "scripts": {
+    "cli": "node src/cli.js",
+    "db:migrate": "node src/cli.js db:migrate",
+    "brands:sync": "node src/cli.js brands:sync",
+    "collect": "node src/cli.js collect",
+    "classify": "node src/cli.js classify",
+    "report": "node src/cli.js report:weekly",
+    "health": "node src/cli.js health",
+    "test": "node --test --test-concurrency=1 \"test/*.test.js\""
+  },
+  "license": "MIT",
   "dependencies": {
-    "axios": "^0.19.2",
-    "discord-webhook-node": "^1.0.7",
-    "https-proxy-agent": "^5.0.0",
-    "mongoose": "^5.9.10"
+    "@anthropic-ai/sdk": "^0.133.0",
+    "cheerio": "^1.2.0",
+    "pg": "^8.23.1",
+    "robots-parser": "^3.0.1",
+    "yaml": "^2.9.1",
+    "zod": "^4.6.6"
   }
 }

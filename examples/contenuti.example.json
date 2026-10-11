@@ -1,0 +1,30 @@
+[
+  {
+    "brand": "esempio-operatore-gifting",
+    "platform": "meta_ads",
+    "external_ref": "ESEMPIO-AD-0001",
+    "format": "inserzione",
+    "url": "https://www.facebook.com/ads/library/?id=ESEMPIO",
+    "landing_url": "https://www.example.net/regali",
+    "text": "Testo dell'inserzione copiato dalla Meta Ad Library (esempio).",
+    "media_description": "Foto di un cofanetto su tavola apparecchiata (descrizione di chi ha raccolto il dato)",
+    "cta": "Acquista ora",
+    "offer": "Spedizione gratuita",
+    "observed_at": "2026-10-12",
+    "collection_method": "Meta Ad Library, consultazione manuale",
+    "active": true
+  },
+  {
+    "brand": "esempio-frantoio-diretto",
+    "platform": "instagram",
+    "external_ref": "https://www.instagram.com/p/ESEMPIO/",
+    "format": "reel",
+    "url": "https://www.instagram.com/p/ESEMPIO/",
+    "text": "Caption del reel (esempio).",
+    "media_description": "Video della raccolta in uliveto",
+    "published_at": "2026-10-10",
+    "observed_at": "2026-10-12",
+    "collection_method": "Instagram, consultazione manuale del profilo pubblico",
+    "metrics": { "likes": 120, "comments": 8 }
+  }
+]

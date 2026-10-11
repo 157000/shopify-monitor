@@ -1,0 +1,18 @@
+# Database locale per sviluppo e prime prove.
+#   docker compose up -d
+#   DATABASE_URL=postgres://tgi:tgi@localhost:5432/tenuta_grieci
+services:
+  postgres:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: tgi
+      POSTGRES_PASSWORD: tgi
+      POSTGRES_DB: tenuta_grieci
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - tgi-data:/var/lib/postgresql/data
+
+volumes:
+  tgi-data:
